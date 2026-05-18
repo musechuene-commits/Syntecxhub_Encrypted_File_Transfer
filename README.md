@@ -1,50 +1,59 @@
-# Syntecxhub Encrypted File Transfer
+# 🔐 Syntecxhub Encrypted File Transfer
 
-## Project Overview
+## 📌 Project Overview
 
-Syntecxhub Encrypted File Transfer is a cybersecurity-focused Python project that demonstrates secure file transmission using AES encryption, HMAC integrity verification, and client-server socket communication.
+Syntecxhub Encrypted File Transfer is a cybersecurity-focused Python project designed to demonstrate secure file transmission using:
 
-The project simulates a secure file transfer environment where files are:
-- encrypted before transmission
-- securely transferred over a network socket
-- verified for integrity using HMAC-SHA256
-- decrypted and stored securely on the receiving server
+- AES-256 encryption
+- HMAC-SHA256 integrity verification
+- TCP socket communication
+- Secure client-server architecture
 
-This project was built to strengthen practical cybersecurity, networking, and secure programming skills.
+The project simulates how organizations securely transfer sensitive files across a network while ensuring:
+- confidentiality
+- integrity
+- secure storage
 
----
-
-# Features
-
-## Secure File Encryption
-- AES-256 encryption using Python cryptography library
-- CBC mode encryption with randomly generated IVs
-
-## Integrity Verification
-- HMAC-SHA256 integrity validation
-- Detects unauthorized file modification or tampering
-
-## Secure Client-Server Communication
-- TCP socket-based communication
-- Secure encrypted file transfer workflow
-
-## Secure File Storage
-- Files are decrypted and securely stored on the server side
+This project was developed as part of a practical cybersecurity portfolio focused on secure communications and defensive security engineering.
 
 ---
 
-# Technologies Used
+# 🚀 Features
 
-- Python 3
-- Socket Programming
-- AES Encryption
-- HMAC-SHA256
-- Cryptography Library
-- TCP/IP Networking
+## ✅ AES-256 File Encryption
+- Encrypts files before transmission
+- Uses AES encryption in CBC mode
+- Random IV generation for improved security
+
+## ✅ HMAC Integrity Verification
+- Uses HMAC-SHA256 hashing
+- Detects file tampering or modification
+- Verifies integrity before decryption
+
+## ✅ Secure Client-Server Communication
+- TCP socket-based secure transmission
+- Simulates encrypted enterprise file transfer workflows
+
+## ✅ Secure File Storage
+- Automatically decrypts and stores validated files
+- Files saved securely inside `received_files`
 
 ---
 
-# Project Structure
+# 🛠 Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python 3 | Application development |
+| Socket Programming | Client-server communication |
+| AES Encryption | Data confidentiality |
+| HMAC-SHA256 | Integrity verification |
+| Cryptography Library | Secure encryption implementation |
+| TCP/IP Networking | Secure data transmission |
+
+---
+
+# 📂 Project Structure
 
 ```text
 Syntecxhub_Encrypted_File_Transfer
@@ -60,7 +69,6 @@ Syntecxhub_Encrypted_File_Transfer
 │   └── hmac_utils.py
 │
 ├── received_files
-│
 ├── screenshots
 │
 ├── testfile.txt
@@ -68,111 +76,210 @@ Syntecxhub_Encrypted_File_Transfer
 ├── README.md
 ├── LICENSE
 └── .gitignore
+```
 
-How It Works
-Step 1 — Client Reads File
+---
 
-The client application reads the selected file from disk.
+# ⚙️ Installation
 
-Step 2 — AES Encryption
+## 1️⃣ Clone Repository
 
-The file contents are encrypted using AES encryption before transmission.
-
-Step 3 — HMAC Generation
-
-An HMAC-SHA256 hash is generated to ensure file integrity.
-
-Step 4 — Secure File Transfer
-
-The encrypted file and HMAC are transmitted securely to the server using TCP sockets.
-
-Step 5 — Integrity Verification
-
-The server verifies the HMAC to ensure the file was not modified during transmission.
-
-Step 6 — File Decryption
-
-If integrity validation succeeds, the file is decrypted.
-
-Step 7 — Secure Storage
-
-The decrypted file is stored inside the received_files directory.
-
-Installation
-Clone Repository
+```bash
 git clone https://github.com/musechuene-commits/Syntecxhub_Encrypted_File_Transfer.git
-Navigate Into Project
+```
+
+## 2️⃣ Navigate Into Project
+
+```bash
 cd Syntecxhub_Encrypted_File_Transfer
-Install Requirements
+```
+
+## 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Usage
-Start Server
+```
+
+---
+
+# ▶️ Usage
+
+## Step 1 — Start Server
+
+```bash
 python server/server.py
-Start Client
+```
+
+Expected output:
+
+```text
+[SERVER STARTED] Listening on 127.0.0.1:5000
+```
+
+---
+
+## Step 2 — Start Client
 
 Open a second terminal:
 
+```bash
 python client/client.py
+```
 
 When prompted:
 
+```text
 Enter file path to send:
+```
 
 Example:
 
+```text
 testfile.txt
-Example Output
-Client
+```
+
+---
+
+# ✅ Example Output
+
+## Client Output
+
+```text
 FILE_RECEIVED_SUCCESSFULLY
-Server
+```
+
+## Server Output
+
+```text
 [SUCCESS] File received and verified: testfile.txt
-Screenshots
-Secure File Transfer
+```
 
-(Add screenshot here)
+---
 
-Server Verification
+# 🔍 How The Project Works
 
-(Add screenshot here)
+## Step 1 — File Selection
+The client selects a local file to transfer.
 
-Received Files
+## Step 2 — Encryption
+The file contents are encrypted using AES-256 encryption.
 
-(Add screenshot here)
+## Step 3 — HMAC Generation
+An HMAC-SHA256 hash is generated to ensure integrity validation.
 
-Security Concepts Demonstrated
-AES Encryption
-HMAC Integrity Validation
-Secure File Transmission
-TCP Socket Programming
-Secure Storage Concepts
-Cryptography Fundamentals
-Client-Server Security Architecture
-Skills Demonstrated
-Cybersecurity Skills
-Encryption implementation
-Integrity verification
-Secure communication
-Secure file handling
-Defensive programming
-Technical Skills
-Python programming
-Socket programming
-Networking fundamentals
-File handling
-Troubleshooting
-Future Improvements
-TLS/SSL encryption
-Multi-client support
-File size validation
-Secure authentication system
-Logging and monitoring
-GUI interface
-Secure key management
-Disclaimer
+## Step 4 — Secure Transmission
+The encrypted file and integrity hash are sent to the server through TCP sockets.
+
+## Step 5 — Integrity Validation
+The server validates the HMAC before decryption.
+
+## Step 6 — File Decryption
+If verification succeeds, the file is decrypted securely.
+
+## Step 7 — Secure Storage
+The file is stored inside the `received_files` directory.
+
+---
+
+# 📸 Screenshots
+
+## 🔹 Server Running
+
+![Server Screenshot](screenshots/server.png)
+
+---
+
+## 🔹 Client File Transfer
+
+![Client Screenshot](screenshots/client.png)
+
+---
+
+## 🔹 Secure File Storage
+
+![Received Files](screenshots/received_files.png)
+
+---
+
+# 🛡 Security Concepts Demonstrated
+
+- AES Encryption
+- HMAC Integrity Validation
+- Secure File Transmission
+- Client-Server Security Architecture
+- TCP Socket Programming
+- Secure Storage Principles
+- Defensive Programming
+
+---
+
+# ⚠️ Security Limitations
+
+This project was developed for educational purposes and does not yet include:
+
+- TLS/SSL encryption
+- Authentication mechanisms
+- Secure key exchange
+- Multi-user authorization
+- Secure credential storage
+
+---
+
+# 🚀 Future Improvements
+
+Planned future enhancements include:
+
+- TLS/SSL secure sockets
+- Multi-client support
+- Secure login authentication
+- File size restrictions
+- Logging and monitoring
+- GUI interface
+- Secure key management
+- Cloud storage integration
+
+---
+
+# 📚 Skills Demonstrated
+
+## Cybersecurity Skills
+- Cryptography implementation
+- Integrity verification
+- Secure communications
+- Secure software development
+- Defensive security engineering
+
+## Technical Skills
+- Python programming
+- Networking fundamentals
+- Socket programming
+- File handling
+- Troubleshooting
+
+---
+
+# 🎯 Key Learning Outcomes
+
+Through this project I gained practical experience with:
+
+- implementing AES encryption
+- verifying data integrity using HMAC
+- building secure client-server applications
+- handling encrypted file transmission
+- secure file storage concepts
+- Python socket programming
+
+---
+
+# ⚖️ Disclaimer
 
 This project was created strictly for educational and portfolio purposes in a controlled local environment.
 
-Author
-Musa Chuene
-LinkedIn: https://linkedin.com/in/musa-chuene-57a4461a8
-GitHub: https://github.com/musechuene-commits
+---
+
+# 👨‍💻 Author
+
+## Musa Chuene
+
+- LinkedIn: https://linkedin.com/in/musa-chuene-57a4461a8
+- GitHub: https://github.com/musechuene-commits
